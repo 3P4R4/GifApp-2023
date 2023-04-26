@@ -33,7 +33,7 @@ export class GifService {
   searchTag(tag:string):void{
   
   if (typeof tag !== 'string' || tag.trim().length === 0) {
-    console.log("Invalid tag: ", tag);
+    
     return;
   }
    this.organizeHistory(tag);  
@@ -45,7 +45,7 @@ export class GifService {
    
    this.http.get<SearchResponse>(`${this.serviceUrl}/search`,{params}).subscribe((resp)=>{
     this.gifList = resp.data;
-    console.log({gifs:this.gifList});
+
   }
    )
   
